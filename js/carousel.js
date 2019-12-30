@@ -13,6 +13,7 @@ class CarouselLayer {
         this.oBtn_r = this.oCarousel.querySelector('.right_arrow');
         this.aPoints = this.oCarousel.querySelectorAll('.point_box li');
         this.now_index = 0;
+        this.last_index = 0;
         console.log(this.layer2);
         this.is_run = false;
         this.aPoints.forEach((li, index) => li.index = index);
@@ -67,17 +68,24 @@ class CarouselLayer {
         this.layer3.style.transform = `rotateY(${this.now_index*90}deg)`;
         this.layer2.style.transitionDelay = `0.1s`;
         this.layer3.style.transitionDelay = `0.2s`;
-        this.aPoints.forEach((li, index) => {
-            li.classList.remove('active');
-            _now_index = this.calc_index(this.now_index);
+        // this.aPoints.forEach((li, index) => {
+        //     li.classList.remove('active');
+           
     
-            (index == _now_index) && (li.classList.add('active'));
-            this.layer3.ontransitionend = () => {
-                this.aFronts[_now_index].classList.add('active');
-            }
+        //     (index == _now_index) && (li.classList.add('active'));
+            
     
-        })
-    
+        // })
+        this.aPoints[this.last_index].classList.remove('active');
+        _now_index = this.calc_index(this.now_index);
+        this.aPoints[_now_index].classList.add('active');
+        this.layer3.ontransitionend = () => {
+            this.aFronts[_now_index].classList.add('active');
+        }
+
+        this.last_index=_now_index;
+        console.log(this.last_index);
+        
     
     }
     
