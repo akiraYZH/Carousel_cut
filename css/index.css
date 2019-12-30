@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none; }
+
+.web .carousel {
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .web .carousel::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 56.25%; }
+  .web .carousel .fronts {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+    .web .carousel .fronts li {
+      height: 100%;
+      width: 100%;
+      background-size: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none; }
+      .web .carousel .fronts li.active {
+        display: block; }
+      .web .carousel .fronts li:nth-of-type(1) {
+        background-image: url("../img/2.jpg"); }
+      .web .carousel .fronts li:nth-of-type(2) {
+        background-image: url("../img/7.jpg"); }
+      .web .carousel .fronts li:nth-of-type(3) {
+        background-image: url("../img/8.jpg"); }
+      .web .carousel .fronts li:nth-of-type(4) {
+        background-image: url("../img/7.jpg"); }
+  .web .carousel .layers {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 0; }
+    .web .carousel .layers li {
+      display: block;
+      width: 100%;
+      flex-grow: 1;
+      line-height: 0;
+      position: relative;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      transition: .5s; }
+      .web .carousel .layers li:nth-of-type(1) span {
+        background-position-y: 0; }
+      .web .carousel .layers li:nth-of-type(2) span {
+        background-position-y: 50%; }
+      .web .carousel .layers li:nth-of-type(3) span {
+        background-position-y: 100%; }
+      .web .carousel .layers li span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: 100%;
+        overflow: hidden;
+        -webkit-backface-visibility: hidden; }
+      .web .carousel .layers li span:nth-of-type(1) {
+        transform: translateZ(30vw);
+        background-image: url("../img/2.jpg"); }
+      .web .carousel .layers li span:nth-of-type(2) {
+        transform: rotateY(90deg) translateZ(30vw);
+        background-image: url("../img/7.jpg"); }
+      .web .carousel .layers li span:nth-of-type(3) {
+        transform: rotateY(180deg) translateZ(30vw);
+        background-image: url("../img/8.jpg"); }
+      .web .carousel .layers li span:nth-of-type(4) {
+        transform: rotateY(270deg) translateZ(30vw);
+        background-image: url("../img/7.jpg"); }
+  .web .carousel .point_box {
+    position: absolute;
+    bottom: 10px;
+    transform: translateZ(40vw);
+    width: 100%;
+    font-size: 0;
+    text-align: center; }
+    .web .carousel .point_box ul {
+      display: inline-block;
+      vertical-align: middle; }
+      .web .carousel .point_box ul li {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 8px;
+        background-color: #fff;
+        border-radius: 50%;
+        cursor: pointer; }
+        .web .carousel .point_box ul li.active {
+          background-color: #87ceeb; }
+    .web .carousel .point_box .left_arrow,
+    .web .carousel .point_box .right_arrow {
+      display: inline-block;
+      vertical-align: middle;
+      width: 40px;
+      background-color: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative; }
+      .web .carousel .point_box .left_arrow::before,
+      .web .carousel .point_box .right_arrow::before {
+        content: "";
+        display: inline-block;
+        padding-top: 100%; }
+      .web .carousel .point_box .left_arrow arrow,
+      .web .carousel .point_box .right_arrow arrow {
+        display: inline-block;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        line-height: 24px;
+        user-select: none; }
+
+/*# sourceMappingURL=index.css.map */
